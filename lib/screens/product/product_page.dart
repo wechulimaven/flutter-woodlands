@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'components/product_display.dart';
+import 'productsDetailPage.dart';
 import 'view_product_page.dart';
 
 class ProductPage extends StatefulWidget {
@@ -28,7 +29,7 @@ class _ProductPageState extends State<ProductPage> {
 
     Widget viewProductButton  = InkWell(
       onTap: () => Navigator.of(context)
-          .push(MaterialPageRoute(builder: (_) => ViewProductPage(product: product,))),
+          .push(MaterialPageRoute(builder: (_) => ProductDetailsPage(product: product,))),
       child: Container(
         height: 80,
         width: width / 1.5,
@@ -54,7 +55,8 @@ class _ProductPageState extends State<ProductPage> {
     );
 
     return Scaffold(
-      backgroundColor: yellow,
+      backgroundColor: Colors.transparent,
+      // yellow,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
