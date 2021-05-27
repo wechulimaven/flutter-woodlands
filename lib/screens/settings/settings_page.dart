@@ -1,5 +1,7 @@
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:woodHw/app_properties.dart';
 import 'package:woodHw/custom_background.dart';
+import 'package:woodHw/screens/auth/signIn.dart';
 import 'package:woodHw/screens/auth/welcome_back_page.dart';
 import 'package:woodHw/screens/settings/change_country.dart';
 import 'package:woodHw/screens/settings/change_password_page.dart';
@@ -94,10 +96,11 @@ class SettingsPage extends StatelessWidget {
                         MaterialPageRoute(builder: (_) => ChangePasswordPage())),
                   ),
                   ListTile(
-                    title: Text('Sign out'),
-                      leading: Image.asset('assets/icons/sign_out.png'),
+                    title: Text('Edit Profile'),
+                      leading: Icon(LineAwesomeIcons.edit),
+                      // Image.asset('assets/icons/sign_out.png'),
                     onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(builder: (_) => WelcomeBackPage())),
+                        MaterialPageRoute(builder: (_) => SignInScreen())),
                   ),
                   
                 ],

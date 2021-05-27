@@ -8,6 +8,7 @@ import 'package:woodHw/models/product.dart';
 import 'package:woodHw/screens/cart/cartScreen.dart';
 import 'package:woodHw/screens/category/category.dart';
 import 'package:woodHw/screens/notifications_page.dart';
+import 'package:woodHw/screens/profile/profile.dart';
 import 'package:woodHw/screens/shop/check_out_page.dart';
 
 import '../../app_properties.dart';
@@ -237,7 +238,7 @@ class _MainPageState extends State<MainPage>
             ),
             CategoryListPage(),
             CartScreen(),
-            ProfilePage()
+            ProfileScreen()
           ],
         ),
       ),
