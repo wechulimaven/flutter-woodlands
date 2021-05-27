@@ -91,7 +91,7 @@ class _CategoryListPageState extends State<CategoryListPage> {
 
   @override
   Widget build(BuildContext context) {
-    // var cat = categories.asMap().entries.map((f) {;
+    // var cat = categories.asMap().entries.map((f) {return};
     return Scaffold(
       body: Column(
         children: <Widget>[
@@ -137,13 +137,13 @@ class _CategoryListPageState extends State<CategoryListPage> {
                           icon: Icon(Icons.search),
                           iconSize: 30.0,
                           color: Colors.black,
-                          onPressed: () => Navigator.pop(context),
+                          onPressed: (){},
                         ),
                         IconButton(
                           icon: Icon(Icons.sort_outlined),
                           iconSize: 25.0,
                           color: Colors.black,
-                          onPressed: () => Navigator.pop(context),
+                          onPressed: () {},
                         ),
                       ],
                     ),
