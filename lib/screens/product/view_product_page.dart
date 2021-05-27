@@ -86,7 +86,7 @@ class _ViewProductPageState extends State<ViewProductPage> {
             )
           ],
           title: Text(
-            'Headphones',
+            widget.product.name,
             style: const TextStyle(
                 color: darkGrey,
                 fontWeight: FontWeight.w500,

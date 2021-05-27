@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:woodHw/models/product.dart';
 import 'package:woodHw/screens/product/components/color_list.dart';
@@ -11,7 +10,7 @@ class PromoItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: 20),
-      height:280,
+      height: 280,
       child: Stack(
         children: <Widget>[
           Align(
@@ -51,7 +50,7 @@ class PromoItem extends StatelessWidget {
                                       left: 32.0, top: 8.0, bottom: 8.0),
                                   child: Row(
                                     mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
                                       ColorOption(Colors.red),
                                       Text(
@@ -101,7 +100,8 @@ class PromoItem extends StatelessWidget {
 //                            )
                         ]),
                     Container(
-                      padding: EdgeInsets.only(left: 16.0,right: 16.0,top: 32.0,bottom: 16.0),
+                      padding: EdgeInsets.only(
+                          left: 16.0, right: 16.0, top: 32.0, bottom: 16.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -113,7 +113,7 @@ class PromoItem extends StatelessWidget {
                             padding: EdgeInsets.only(left: 16.0),
                             decoration: BoxDecoration(
                               borderRadius:
-                              BorderRadius.all(Radius.circular(5)),
+                                  BorderRadius.all(Radius.circular(5)),
                               color: Colors.grey[200],
                             ),
                             child: TextField(
@@ -128,11 +128,19 @@ class PromoItem extends StatelessWidget {
                   ],
                 )),
           ),
-          Positioned(top: 5, child: ShopProductDisplay(Product(
-              'assets/headphones.png',
-              'Boat roackerz 400 On-Ear Bluetooth Headphones',
-              'description',
-              45.3))),
+          Positioned(
+            top: 5,
+            child: ShopProductDisplay(
+              Product(
+                  image: 'assets/womanshoe_3.png',
+                  name: 'Sound',
+                  description:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Nec nam aliquam sem et tortor consequat id porta nibh. Orci porta non pulvinar neque laoreet suspendisse. Id nibh tortor id aliquet. Dui sapien eget mi proin. Viverra vitae congue eu consequat ac felis donec. Etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus. Vulputate mi sit amet mauris commodo quis imperdiet. Vel fringilla est ullamcorper eget nulla facilisi etiam dignissim. Sit amet cursus sit amet dictum sit amet justo. Mattis pellentesque id nibh tortor. Sed blandit libero volutpat sed cras ornare arcu dui. Fermentum et sollicitudin ac orci phasellus. Ipsum nunc aliquet bibendum enim facilisis gravida. Viverra suspendisse potenti nullam ac tortor. Dapibus ultrices in iaculis nunc sed. Nisi porta lorem mollis aliquam ut porttitor leo a. Phasellus egestas tellus rutrum tellus pellentesque. Et malesuada fames ac turpis egestas maecenas pharetra convallis. Commodo ullamcorper a lacus vestibulum sed arcu non odio. Urna id volutpat lacus laoreet non curabitur gravida arcu ac. Eros in cursus turpis massa. Eget mauris pharetra et ultrices neque.',
+                  price: 102.99,
+                  rating: 4,
+                  discountPercent: 5),
+            ),
+          )
         ],
       ),
     );

@@ -1,5 +1,7 @@
 import 'package:woodHw/app_properties.dart';
 import 'package:woodHw/models/product.dart';
+import 'package:woodHw/screens/address/deliveryAddress.dart';
+import 'package:woodHw/screens/cart/cartScreen.dart';
 import 'package:woodHw/screens/shop/check_out_page.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +10,8 @@ import 'shop_bottomSheet.dart';
 class ProductOption extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
   final Product product;
-  const ProductOption(this.scaffoldKey, {Key key, this.product}) : super(key: key);
+  const ProductOption(this.scaffoldKey, {Key key, this.product})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,8 +47,8 @@ class ProductOption extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () async {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (_)=>CheckOutPage()));
-
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (_) => delivery()));
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width / 2.5,
@@ -68,11 +71,12 @@ class ProductOption extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: () {
-                      scaffoldKey.currentState.showBottomSheet((context) {
-                        return ShopBottomSheet();
-                      });
-                    },
+                    onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => CartScreen())),
+                    // scaffoldKey.currentState.showBottomSheet((context) {
+                    //   return ShopBottomSheet();
+                    // });
+                    // },
                     child: Container(
                       width: MediaQuery.of(context).size.width / 2.5,
                       decoration: BoxDecoration(

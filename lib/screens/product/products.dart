@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:woodHw/helper/constant.dart';
 import 'package:woodHw/models/product.dart';
-import 'package:woodHw/screens/product/product_page.dart';
 
-import '../../../app_properties.dart';
+import 'components/furnitureGridView.dart';
+import 'components/siliverHeader.dart';
+import 'productsDetailPage.dart';
+import 'view_product_page.dart';
 
-class RecommendedList extends StatelessWidget {
+class CategoryScreen extends StatefulWidget {
+  @override
+  _CategoryScreenState createState() => _CategoryScreenState();
+}
+
+class _CategoryScreenState extends State<CategoryScreen> {
   List<Product> products = [
     Product(
         image: 'assets/bag_1.png',
@@ -80,69 +87,53 @@ class RecommendedList extends StatelessWidget {
         rating: 4,
         discountPercent: 5),
   ];
-
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        SizedBox(
-          height: 20,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              IntrinsicHeight(
-                child: Container(
-                  margin: const EdgeInsets.only(left: 16.0, right: 8.0),
-                  width: 4,
-                  color: mediumYellow,
-                ),
+    return Scaffold(
+      // bottomNavigationBar: AppBottomNavigation(),
+      backgroundColor: primaryColor,
+      body: SafeArea(
+        child: CustomScrollView(
+          slivers: [
+            SliverPersistentHeader(
+              pinned: true,
+              floating: true,
+              delegate: HeaderSliver(
+                minExtent: 120,
+                maxExtent: 120,
               ),
-              Center(
-                  child: Text(
-                'Recommended',
-                style: TextStyle(
-                    color: darkGrey,
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold),
-              )),
-            ],
-          ),
-        ),
-        Flexible(
-          child: Container(
-            padding: EdgeInsets.only(top: 16.0, right: 16.0, left: 16.0),
-            child: StaggeredGridView.countBuilder(
-              physics: NeverScrollableScrollPhysics(),
-              padding: EdgeInsets.zero,
-              crossAxisCount: 4,
-              itemCount: products.length,
-              itemBuilder: (BuildContext context, int index) => new ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                child: InkWell(
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                      builder: (_) => ProductPage(product: products[index]))),
-                  child: Container(
-                      decoration: BoxDecoration(
-                        gradient: RadialGradient(
-                            colors: [Colors.grey[500], Colors.grey[700]],
-                            center: Alignment(0, 0),
-                            radius: 0.6,
-                            focal: Alignment(0, 0),
-                            focalRadius: 0.1),
-                      ),
-                      child: Hero(
-                          tag: products[index].image,
-                          child: Image.asset(products[index].image))),
-                ),
-              ),
-              staggeredTileBuilder: (int index) =>
-                  new StaggeredTile.count(2, index.isEven ? 3 : 2),
-              mainAxisSpacing: 4.0,
-              crossAxisSpacing: 4.0,
             ),
-          ),
+            SliverGrid.count(
+              crossAxisCount: 2,
+              childAspectRatio: 0.65,
+              mainAxisSpacing: 16,
+              crossAxisSpacing: 16,
+              children: products.asMap().entries.map((f) {
+                return InkWell(
+                  onTap: () {
+                    print('CATE TAPPPED');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ProductDetailsPage(
+                          product: f.value,
+                        ),
+                        // DetailsScreen(product:f.value),
+                      ),
+                    );
+                  },
+                  child: FurnitureGridItem(
+                      item: f.value,
+                      margin: EdgeInsets.only(
+                        left: f.key.isEven ? 16 : 0,
+                        right: f.key.isOdd ? 16 : 0,
+                      )),
+                );
+              }).toList(),
+            )
+          ],
         ),
-      ],
+      ),
     );
   }
 }

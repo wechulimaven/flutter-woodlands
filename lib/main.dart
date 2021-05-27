@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'splashScreen.dart';
+import 'theme.dart';
 
 // import 'screens/splash_page.dart';
 
@@ -16,12 +17,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Modern WoodLands',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.light,
-        canvasColor: Colors.transparent,
-        primarySwatch: Colors.blue,
-        fontFamily: "Montserrat",
-      ),
+      theme: theme(),
+      // ThemeData(
+      //   brightness: Brightness.light,
+      //   canvasColor: Colors.transparent,
+      //   primarySwatch: Colors.blue,
+      //   fontFamily: "Montserrat",
+      // ),
       home: Spleash_screen(),
     );
   }

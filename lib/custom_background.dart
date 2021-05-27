@@ -34,11 +34,11 @@ class MainBackground extends CustomPainter {
 canvas.drawRect(
         Rect.fromLTRB(
             0, 0,width, height),
-        Paint()..color = Colors.white);
+        Paint()..color = Color(0xFFF1EFF1));
     canvas.drawRect(
         Rect.fromLTRB(
             width - (width / 3), 0,width, height),
-        Paint()..color = transparentYellow);
+        Paint()..color = Color(0xFFF1EFF1));
         
   }
 

@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:woodHw/models/category.dart';
+import 'package:woodHw/screens/product/products.dart';
 
 import 'category_card.dart';
 import 'featured.dart';
@@ -68,8 +68,13 @@ class TabView extends StatelessWidget {
                     child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: categories.length,
-                        itemBuilder: (_, index) => CategoryCard(
-                              category: categories[index],
+                        itemBuilder: (_, index) => InkWell(
+                              onTap: () => Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (context) => CategoryScreen())),
+                              child: CategoryCard(
+                                category: categories[index],
+                              ),
                             ))),
                 SizedBox(
                   height: 16.0,
@@ -78,13 +83,12 @@ class TabView extends StatelessWidget {
               ],
             ),
           ),
-          Column(children: <Widget>[
-            SizedBox(
-              height: 16.0,
-            ),
-            Flexible(child: RecommendedList())
-          ]),
-          
+          // Column(children: <Widget>[
+          //   SizedBox(
+          //     height: 16.0,
+          //   ),
+          //   Flexible(child: RecommendedList())
+          // ]),
         ]);
   }
 }
