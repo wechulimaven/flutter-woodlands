@@ -5,11 +5,10 @@ import 'components/cBody.dart';
 import 'components/checkout_Card.dart';
 
 class CartScreen extends StatelessWidget {
-  static String routeName = "/cart";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.white,
       appBar: buildAppBar(context),
       body: Body(),
       bottomNavigationBar: CheckoutCard(),

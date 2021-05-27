@@ -5,6 +5,13 @@ import '../sizeConfig.dart';
 
 enum MenuState { home, favourite, message, profile }
 
+const kBackgroundGradientColor = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    tileMode: TileMode.clamp,
+    colors: [  Color(0xFF6A0DAD),
+  Color(0xFFC167FF),
+  Color(0xFFFFC0CB),]);
 
 const kPrimaryColor = Color(0xFFFF7643);
 const kPrimaryLightColor = Color(0xFFFFECDF);
@@ -25,8 +32,8 @@ const kTenBlackColor = Color(0x10000000);
 // const kBackgroundColor = Color(0xFFFAFAFA);
 const kGreyColor = Color(0xff8A959E);
 
-
-const Color primaryColor = Color(0xFFFFDCE7);// const kSecondaryColor = Color(0xFFFFA41B);
+const Color primaryColor =
+    Color(0xFFFFDCE7); // const kSecondaryColor = Color(0xFFFFA41B);
 const kDefaultPadding = 20.0;
 const kTextLightColor = Color(0xFF747474);
 const kBlueColor = Color(0xFF40BAD5);
@@ -89,8 +96,6 @@ class VerticalSeparator extends StatelessWidget {
   }
 }
 
-
-
 class ActionButton extends StatelessWidget {
   final Function() onTap;
   final String title;
@@ -120,12 +125,12 @@ class ActionButton extends StatelessWidget {
           Stack(
             overflow: Overflow.visible,
             children: [
-              Text(
-                title,
-                style: TextStyle(
+              Text(title,
+                  style: TextStyle(
                     color: active ? primaryColor : Colors.black87,
-                    fontSize: 16.0, fontWeight:FontWeight.bold,)
-              ),
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                  )),
               if (active)
                 Positioned(
                   top: -3,
@@ -154,11 +159,7 @@ class ActionButton extends StatelessWidget {
   }
 }
 
-
-
 List<String> sizeNumlist = [
-  
-  
   "9",
   "10",
 ];

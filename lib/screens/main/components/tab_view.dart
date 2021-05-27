@@ -9,40 +9,76 @@ import 'recommended_list.dart';
 class TabView extends StatelessWidget {
   List<Category> categories = [
     Category(
-      Color(0xffFCE183),
-      Color(0xffF68D7F),
-      'Gadgets',
-      'assets/jeans_5.png',
+      begin:Color(0xffFCE183),
+      end:Color(0xffF68D7F),
+      category:'Roofing ',
+      image:'assets/jeans_5.png',
+      rating: 5,
+      type: 'Construction'
     ),
     Category(
-      Color(0xffF749A2),
-      Color(0xffFF7375),
-      'Clothes',
-      'assets/jeans_5.png',
+      begin:Color(0xffF749A2),
+      end:Color(0xffFF7375),
+      category:'Cealing Boards',
+      image:'assets/jeans_5.png',
+      rating: 5,
+      type: 'wood'
     ),
     Category(
-      Color(0xff00E9DA),
-      Color(0xff5189EA),
-      'Fashion',
-      'assets/jeans_5.png',
+      begin: Color(0xff00E9DA),
+      end: Color(0xff5189EA),
+      category:'Glasses',
+      image:'assets/jeans_5.png',
+      rating: 5,
+      type: 'Housing'
     ),
     Category(
-      Color(0xffAF2D68),
-      Color(0xff632376),
-      'Home',
-      'assets/jeans_5.png',
+      begin: Color(0xffAF2D68),
+      end: Color(0xff632376),
+      category: 'Doors',
+      image: 'assets/jeans_5.png',
+      rating: 5,
+      type: 'Roofing'
     ),
     Category(
-      Color(0xff36E892),
-      Color(0xff33B2B9),
-      'Beauty',
-      'assets/jeans_5.png',
+      begin:Color(0xff36E892),
+      end:Color(0xff33B2B9),
+      category:'Frames',
+      image:'assets/jeans_5.png',
+      rating: 5,
+      type: 'Painting'
     ),
     Category(
-      Color(0xffF123C4),
-      Color(0xff668CEA),
-      'Appliances',
-      'assets/jeans_5.png',
+      begin:Color(0xffF123C4),
+      end:Color(0xff668CEA),
+      category:'Building Materials',
+      image:'assets/jeans_5.png',
+      rating: 5,
+      type: 'Building'
+    ),
+    Category(
+      begin: Color(0xffAF2D68),
+      end: Color(0xff632376),
+      category: 'Fitting Materials',
+      image: 'assets/jeans_5.png',
+      rating: 5,
+      type: 'Roofing'
+    ),
+    Category(
+      begin: Color(0xff00E9DA),
+      end: Color(0xff5189EA),
+      category:'Blocks',
+      image:'assets/jeans_5.png',
+      rating: 5,
+      type: 'Housing'
+    ),
+    Category(
+      begin:Color(0xff36E892),
+      end:Color(0xff33B2B9),
+      category:'Fitting Materials',
+      image:'assets/jeans_5.png',
+      rating: 5,
+      type: 'Painting'
     ),
   ];
 

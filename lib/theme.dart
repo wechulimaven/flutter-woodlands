@@ -4,7 +4,7 @@ import 'helper/constant.dart';
 
 ThemeData theme() {
   return ThemeData(
-    scaffoldBackgroundColor: Colors.transparent,
+    scaffoldBackgroundColor: Colors.white54,
     fontFamily: "Montserrat",
     appBarTheme: appBarTheme(),
     textTheme: textTheme(),

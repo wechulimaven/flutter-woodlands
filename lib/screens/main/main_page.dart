@@ -3,8 +3,10 @@ import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:woodHw/components/slider.dart';
+import 'package:woodHw/models/category.dart';
 import 'package:woodHw/models/product.dart';
-import 'package:woodHw/screens/category/category_list_page.dart';
+import 'package:woodHw/screens/cart/cartScreen.dart';
+import 'package:woodHw/screens/category/category.dart';
 import 'package:woodHw/screens/notifications_page.dart';
 import 'package:woodHw/screens/shop/check_out_page.dart';
 
@@ -63,6 +65,7 @@ class _MainPageState extends State<MainPage>
     tabController = TabController(length: 1, vsync: this);
     bottomTabController = TabController(length: 4, vsync: this);
   }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -86,10 +89,7 @@ class _MainPageState extends State<MainPage>
     // );
 
     Widget appBar = ClipPath(
-      
-      clipper: WaveClipperTwo(
-        flip: true
-        ),
+      clipper: WaveClipperTwo(flip: true),
       child: Container(
         width: MediaQuery.of(context).size.width,
         // double.infinity,
@@ -189,8 +189,18 @@ class _MainPageState extends State<MainPage>
       // appBar: AppBar(toolbarHeight: 150,
       //   actions: [appBar]),
       bottomNavigationBar: CustomBottomBar(controller: bottomTabController),
-      body: CustomPaint(
-        painter: MainBackground(),
+      body: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [Color(0xFF6A0DAD),
+  Color(0xFFC167FF),
+  Color(0xFFFFC0CB),
+  // Color(0xFFC11A55)
+  ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                tileMode: TileMode.clamp)),
         child: TabBarView(
           controller: bottomTabController,
           physics: NeverScrollableScrollPhysics(),
@@ -226,7 +236,7 @@ class _MainPageState extends State<MainPage>
               ),
             ),
             CategoryListPage(),
-            CheckOutPage(),
+            CartScreen(),
             ProfilePage()
           ],
         ),
